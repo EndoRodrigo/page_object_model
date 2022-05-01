@@ -1,7 +1,6 @@
-Feature: Is it Friday yet?
-  Everybody wants to know when it's Friday
+Feature: inicio de sesión en la tienda online
 
-  Scenario: Sunday isn't Friday
-    Given today is Sunday
-    When I ask whether it's Friday yet
-    Then I should be told
+  Scenario: inicio de sesión mediante usuario y contraseña
+    Given el usuario ha de introducir de forma correcta su usuario y su contraseña, que ha registrado previamente.
+    When el usuario clica sobre el botón de iniciar sesión.
+    Then el usuario puede iniciar sesión de forma correcta.

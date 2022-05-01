@@ -1,26 +1,33 @@
 package steps;
 
 
+import PageObject.SingOnPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
 
 public class step {
-    @Given("today is Sunday")
-    public void today_is_sunday() {
-        // Write code here that turns the phrase above into concrete actions
-        System.out.println("Paso 1");
-    }
-    @When("I ask whether it's Friday yet")
-    public void i_ask_whether_it_s_friday_yet() {
-        // Write code here that turns the phrase above into concrete actions
-        System.out.println("Paso 2");
-    }
 
-    @Then("I should be told")
-    public void i_should_be_told() {
+    private WebDriver driver;
+    private SingOnPage login = new SingOnPage(driver);
+
+    @Given("el usuario ha de introducir de forma correcta su usuario y su contraseña, que ha registrado previamente.")
+    public void el_usuario_ha_de_introducir_de_forma_correcta_su_usuario_y_su_contraseña_que_ha_registrado_previamente() {
         // Write code here that turns the phrase above into concrete actions
-        System.out.println("Paso 3");
+        driver = login.chromeDriverConnection();
+        login.AbrirNavegador();
+
+    }
+    @When("el usuario clica sobre el botón de iniciar sesión.")
+    public void el_usuario_clica_sobre_el_botón_de_iniciar_sesión() {
+        // Write code here that turns the phrase above into concrete actions
+        login.SingOnUser();
+    }
+    @Then("el usuario puede iniciar sesión de forma correcta.")
+    public void el_usuario_puede_iniciar_sesión_de_forma_correcta() {
+        // Write code here that turns the phrase above into concrete actions
+        login.ValidarLogin();
     }
 
 }

@@ -20,7 +20,7 @@ public class Base {
 
     //Esta funcion establece la conecion al navegador a usar
     public WebDriver chromeDriverConnection() {
-        System.setProperty("webdriver.chrome.driver","src/test/java/resource/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","src/test/java/resources/chromedriver.exe");
         driver = new ChromeDriver();
         return driver;
     }

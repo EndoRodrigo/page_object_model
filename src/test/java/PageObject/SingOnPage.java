@@ -16,6 +16,9 @@ public class SingOnPage extends Base {
     By submit = By.name("submit");
     By getTexto = By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/p[1]/font/b");
 
+    public void AbrirNavegador(){
+       visit("https://demo.guru99.com/test/newtours/login.php");
+    }
     public void SingOnUser(){
         if (isDisplayed(user)){
             type("endo",user);
@@ -24,8 +27,6 @@ public class SingOnPage extends Base {
         }else {
             System.out.println("Localizador del campos usuario no esta disponible");
         }
-
-
     }
 
     public String ValidarLogin(){
